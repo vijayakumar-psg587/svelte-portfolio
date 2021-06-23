@@ -1,0 +1,7 @@
+@mixin bodyStyle {
+    margin: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    box-sizing: border-box !important;
+    background:linear-gradient(315deg, #5ed9fc 0%, #d0ffff 12%, #c5fdff 69%, #00d4ff 100%) !important;   
+}

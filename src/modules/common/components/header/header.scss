@@ -1,0 +1,73 @@
+@mixin iconDivs {
+	width: 5vw;
+	height: 11vh;
+	position: relative;
+	bottom: 0.2em;
+}
+
+@mixin navBarContainer {
+	text-align: center !important;
+	align-content: center !important;
+	justify-content: center !important;
+	border-radius: 12px 12px 12px 12px;
+}
+
+@mixin customNav {
+	animation-duration: 0.9s;
+	animation-name: slideIn;
+	animation-fill-mode: forwards;
+}
+@keyframes slideIn {
+	0% {
+		-webkit-transform: translateY(-200%);
+		-moz-transform: translateY(-200%);
+		transform: translateY(-200%);
+		opacity: 0.3;
+	}
+
+	20% {
+		-webkit-transform: translateY(-100%);
+		-moz-transform: translateY(-100%);
+		transform: translateY(-100%);
+		opacity: 0.5;
+	}
+
+	60% {
+		-webkit-transform: translateY(-40%);
+		-moz-transform: translateY(-40%);
+		transform: translateY(-40%);
+		opacity: 0.5;
+	}
+
+	60% {
+		-webkit-transform: translateY(110%);
+		-moz-transform: translateY(110%);
+		transform: translateY(110%);
+		opacity: 0.6;
+		height: 20vh;
+
+		border-bottom-left-radius: 3em;
+		border-top-right-radius: 3em;
+		background: linear-gradient(315deg, #cefcfd 0%, #cefcfd 35%, #61ddfc 100%);
+		// background: linear-gradient(315deg, rgba(2,0,36,1) 0%, rgba(53,151,182,0.9556197478991597) 35%, rgba(0,212,255,1) 100%);
+	}
+
+	100% {
+		-webkit-transform: translateY(12%);
+		-moz-transform: translateY(12%);
+		transform: translateY(12%);
+		opacity: 0.9;
+		height: 20vh;
+
+		border-bottom-left-radius: 3em;
+		border-top-right-radius: 3em;
+		background: linear-gradient(315deg, #cefcfd 0%, #cefcfd 35%, #61ddfc 100%);
+		// background: linear-gradient(315deg, rgba(2,0,36,1) 0%, rgba(53,151,182,0.9556197478991597) 35%, rgba(0,212,255,1) 100%);
+	}
+}
+
+@mixin gitHubImage {
+	width: 3.4em !important;
+	position: relative !important;
+	top: 0.2em !important;
+}
