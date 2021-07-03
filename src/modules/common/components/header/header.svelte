@@ -1,12 +1,12 @@
-o<script type="ts">
-    import  headerObj from './header-comp';
+<script type="ts">
+    import  {HEADEROBJ, MODELLIST} from './header-comp';
     import {onMount} from 'svelte'; 
-    
+    import { Button } from 'sveltestrap';
     // import Fa from 'svelte-fa/src/fa.svelte';
     // import { faFlag } from '@fortawesome/free-solid-svg-icons'
     onMount(() => {
         const divEl:HTMLCollectionOf<Element> =  document.getElementsByClassName('avatar');
-        divEl[0].style.backgroundImage = `url(${headerObj['imageUrl']})`;
+        divEl[0].style.backgroundImage = `url(${HEADEROBJ['imageUrl']})`;
     })
   
 </script>
@@ -37,9 +37,16 @@ o<script type="ts">
    }
 
   .gitHubImage {
-   @include gitHubImage;
+   @include imageIcon;
  }
 
+ .twitterImage {
+   @include imageIcon;
+ }
+
+ .linkedInImage {
+   @include imageIcon;
+ }
  .portfolioDiv {
      position: relative;
     top: -1.4em;
@@ -78,41 +85,21 @@ o<script type="ts">
 </style>
 
 <div class="containerFluidDiv container-fluid" >
-    <!-- <Fa
-  icon={faFlag}
-  primaryColor="red"
-  secondaryColor="#000000"
-  primaryOpacity={0.8}
-  secondaryOpacity={0.6}
-  swapOpacity/> -->
-    
     <nav class="customNav navbar navbar-expand-lg navbar-dark bg-primary">
         <div class=" container-fluid navBarContainer">
             <ul class="headerIconUl navbar-nav"> 
+                { #each MODELLIST as m }
                 <li>
                    <div class="iconDivs">
-                       
-                        <img class="twitterImage" style="width: 3.4em;
+                       <Button>
+                        <img class="{m.class}" style="width: 3.4em;
                         position: relative;
-                        top: 0.2em; filter:sepia(12%) contrast(144%) drop-shadow(2px 4px 6px gray);" src="./static/png/twitter1.png" alt="Twitter"/>
-                  
+                        top: 0.2em; filter:sepia(12%) contrast(144%) drop-shadow(2px 4px 6px gray);" 
+                        src="{m.src}" alt="{m.altImageName}"/>
+                    </Button>
                     </div>
                 </li>
-                <li>
-                    <div class="iconDivs">
-                        <img class="githubImage" style="width: 3.4em;
-                        position: relative;
-                        top: 0.2em; filter:sepia(12%) contrast(144%) drop-shadow(2px 4px 6px gray);" src="./static/png/github1.png" alt="Linkedin"/>
-                  </div>
-                    
-                </li>
-                <li>
-                    <div class="iconDivs">
-                        <img class="githubImage" style="width: 3.4em;
-                        position: relative;
-                        top: 0.2em; filter:sepia(12%) contrast(144%) drop-shadow(2px 4px 6px gray);" src="./static/png/linkedin1.png" alt="Linkedin"/>
-                  </div>
-                </li>
+                {/each}
                 
             </ul>
             <div class="portfolioDiv" id="portfolio">
