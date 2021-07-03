@@ -4,10 +4,12 @@
     import { Button } from 'sveltestrap';
     // import Fa from 'svelte-fa/src/fa.svelte';
     // import { faFlag } from '@fortawesome/free-solid-svg-icons'
-    onMount(() => {
-        const divEl:HTMLCollectionOf<Element> =  document.getElementsByClassName('avatar');
-        divEl[0].style.backgroundImage = `url(${HEADEROBJ['imageUrl']})`;
-    })
+    // !!!IMP - Using onmount is another way of loading
+    // onMount(() => {
+    //     const divEl:HTMLCollectionOf<Element> =  document.getElementsByClassName('avatar');
+    //     divEl[0].style.backgroundImage = `url(${HEADEROBJ['imageUrl']})`;
+    // })
+    let url = HEADEROBJ['imageUrl'];
   
 </script>
 
@@ -107,7 +109,7 @@
                   <!-- <h3>{headerObj['title']}</h3> -->
                 </section>
                 <section  class="verticalSection"></section>
-                <section class="avatar"></section>
+                <section class="avatar" style='background-image: url({url});'></section>
             </div>
         </div>
     
