@@ -16,21 +16,30 @@ let models = [];
 		src: './static/png/twitter1.png',
 		name: 'Twitter',
 		class: 'twitterImageClass',
-		altImageName: 'Twitter Image'
+		altImageName: 'Twitter Image',
+		customStyle: `width: 3.4em;
+                        position: relative;
+                        top: 0.2em; filter:sepia(12%) contrast(144%) drop-shadow(2px 4px 6px gray);`
 	};
 
 	const githubModel: MediaModel = {
 		src: './static/png/github1.png',
 		name: 'Github',
 		class: 'githubImageClass',
-		altImageName: 'GitHub Image'
+		altImageName: 'GitHub Image',
+		customStyle: `width: 3.4em;
+		position: relative;
+		top: 0.2em; filter:sepia(12%) contrast(144%) drop-shadow(2px 4px 6px gray);`
 	};
 
 	const linkedInModel: MediaModel = {
 		src: './static/png/linkedin1.png',
 		name: 'LinkedIn',
 		class: 'linkedInImageClass',
-		altImageName: 'LinkedIn Image'
+		altImageName: 'LinkedIn Image',
+		customStyle: `width: 3.4em;
+		position: relative;
+		top: 0.2em; filter:sepia(12%) contrast(144%) drop-shadow(2px 4px 6px gray);`
 	};
 
 	models.push(twitterModel, githubModel, linkedInModel);
