@@ -11,12 +11,23 @@
 
 .customNav {
 	@include customNav;
+	display: grid;
+	grid-template-columns: 3fr 0.5fr 1fr;
+	place-content: center;
+}
+
+.mainNavDiv {
+	grid-column: 1 / span 1;
+}
+
+.rightNavDiv {
+	grid-column: 3 / span 1;
 }
 
 .containerFluidDiv {
 	height: 11vh !important;
-	display: flex;
-	flex-direction: row-reverse;
+	//display: flex;
+	//flex-direction: row-reverse;
 }
 
 .gitHubImage {
@@ -31,13 +42,14 @@
 	@include imageIcon;
 }
 .portfolioDiv {
-	position: relative;
+	position: initial;
 	top: -1.4em;
 	align-items: center;
-	display: grid;
+	place-content: center;
+	display: inline-grid;
 	width: 100%;
 	color: #72a7b1;
-	grid-template-columns: 30% 20% 50%;
+	grid-template-columns: 65% 8% 27%;
 }
 
 .avatar {
@@ -46,6 +58,7 @@
 	width: 75px;
 	border-radius: 50%;
 	height: 70px;
+	transform: translateX(2em);
 	// background-image: url(./static/image/my-image.JPG);
 	background-size: cover;
 	//  this is
@@ -65,7 +78,7 @@
 	grid-column: 2 / span 1;
 	backdrop-filter: blueviolet;
 	border-left: 10px;
-	width: 52%;
+	width: 15%;
 	height: 100%;
 	background: #1a499a;
 	border-radius: 12px 12px 12px 14px;
@@ -82,7 +95,7 @@ let url = HEADEROBJ['imageUrl'];
 
 <div class="containerFluidDiv container-fluid">
 	<nav class="customNav navbar navbar-expand-lg navbar-dark bg-primary">
-		<div class=" container-fluid navBarContainer">
+		<div class="mainNavDiv container-fluid navBarContainer">
 			<ul class="headerIconUl navbar-nav">
 				{#each MODELLIST as m}
 					<li>
@@ -98,6 +111,8 @@ let url = HEADEROBJ['imageUrl'];
 					</li>
 				{/each}
 			</ul>
+		</div>
+		<div class="rightNavDiv container-fluid navBarContainer">
 			<div class="portfolioDiv" id="portfolio">
 				<section class="titleSection">
 					<!-- <h3>{headerObj['title']}</h3> -->
