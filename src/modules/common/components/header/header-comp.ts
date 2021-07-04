@@ -5,6 +5,7 @@ let headerObj: Record<string, unknown> | PromiseLike<Record<string, unknown>> = 
 };
 
 let models = [];
+const links: Record<string, unknown>[] = [];
 (async function headerComp(): Promise<Record<string, unknown>> {
 	// get it from
 	headerObj = {
@@ -42,9 +43,18 @@ let models = [];
 		top: 0.2em; filter:sepia(12%) contrast(144%) drop-shadow(2px 4px 6px gray);`
 	};
 
+	const academyLink = {
+		icon: `<svg width="32px" height="32px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" color="#000000"><path fill="#fff" d="M12 14l9-5-9-5-9 5 9 5z"></path><path fill="#fff" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path></svg>`
+	};
+
+	const archiveLink = {
+		icon: `<svg width="32px" height="32px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" color="#000000"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>`
+	};
+
+	links.push(academyLink, archiveLink);
 	models.push(twitterModel, githubModel, linkedInModel);
-	return headerObj;
 })();
 
 export const HEADEROBJ = headerObj;
 export const MODELLIST = models;
+export const LINKS = links;

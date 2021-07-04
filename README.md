@@ -36,3 +36,14 @@ npm run build
 ```
 
 > You can preview the built app with `npm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
+
+## Installing GSAP
+
+GSAP is a tool to help you in building complex animations - [link](https://greensock.com/docs/)
+There are multiple plugins that are included in free tools, to make sure to download them directly 
+from gsap servers, modify your
+ > .npmrc
+
+Please refer [this](https://greensock.com/docs/v3/Installation#private)
+
+

@@ -12,12 +12,12 @@
 	border-radius: 12px 12px 12px 12px;
 }
 
-@mixin customNav {
+@mixin customNav-NotNeeded-UsingGSAPNOW {
 	animation-duration: 0.9s;
-	animation-name: slideIn;
+	animation-name: bounceOut;
 	animation-fill-mode: forwards;
 }
-@keyframes slideIn {
+@keyframes bounceOut {
 	0% {
 		-webkit-transform: translateY(-200%);
 		-moz-transform: translateY(-200%);

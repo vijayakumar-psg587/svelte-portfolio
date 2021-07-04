@@ -4,4 +4,5 @@ export class MediaModel {
 	class: string;
 	altImageName?: string;
 	targetLocationUrl?: string;
+	customStyle?: string;
 }
